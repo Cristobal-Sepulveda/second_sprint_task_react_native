@@ -1,5 +1,5 @@
 import { Text, Image, Pressable, StyleSheet } from "react-native";
-import { City } from "../types/types";
+import City from "../CitiesScreen/types/types";
 
 export default function CityCard({ city }: { city: City }) {
   return (

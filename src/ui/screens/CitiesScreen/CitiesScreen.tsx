@@ -1,5 +1,5 @@
 import { View, FlatList, StyleSheet } from "react-native";
-import { citiesData } from "../utils/citiesData";
+import { citiesData } from "../../../utils/citiesData";
 import CityCard from "./components/CityCard";
 
 export default function CitiesScreen() {

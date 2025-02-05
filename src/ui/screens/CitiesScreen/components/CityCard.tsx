@@ -1,12 +1,15 @@
 import { Text, Image, Pressable, StyleSheet } from "react-native";
-import City from "../CitiesScreen/types/types";
+import { Link } from "expo-router";
+import City from "../../../../utils/types";
 
 export default function CityCard({ city }: { city: City }) {
   return (
-    <Pressable style={styles.card} onPress={() => {}}>
-      <Image style={styles.image} source={{ uri: city.image }} />
-      <Text style={styles.name}>{city.name}</Text>
-    </Pressable>
+    <Link href={`/${city.name}`} asChild>
+      <Pressable style={styles.card} onPress={() => {}}>
+        <Image style={styles.image} source={{ uri: city.image }} />
+        <Text style={styles.name}>{city.name}</Text>
+      </Pressable>
+    </Link>
   );
 }
 

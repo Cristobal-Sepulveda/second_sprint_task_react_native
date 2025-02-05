@@ -1,5 +1,6 @@
 import { Tabs } from "expo-router";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function Layout() {
   return (
@@ -15,7 +16,9 @@ export default function Layout() {
         name="cities"
         options={{
           title: "Cities",
-          tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="city" size={24} color="black" />
+          ),
         }}
       />
     </Tabs>

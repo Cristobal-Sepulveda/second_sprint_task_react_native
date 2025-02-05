@@ -1,10 +1,9 @@
-import React from "react";
 import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 
 const { width } = Dimensions.get("window");
 
-const CarouselCities = ({ cities }) => {
+const CustomCarousel = ({ cities }) => {
   return (
     <View style={styles.container}>
       <Carousel
@@ -43,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CarouselCities;
+export default CustomCarousel;

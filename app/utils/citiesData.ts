@@ -1,4 +1,4 @@
-export const citiesData = [
+const citiesData = [
     {
       image: "https://media.gettyimages.com/id/567877437/es/foto/clean-wide-city-skyline-of-santiago-de-chile.jpg?s=1024x1024&w=gi&k=20&c=A4mUcc-DCBxtnZ-D96HRrX2qmwatrRIbMzf53Wyg2uY=",
       name: "Santiago",
@@ -12,3 +12,5 @@ export const citiesData = [
       name: "Nueva York",
     },
   ];
+
+export default citiesData

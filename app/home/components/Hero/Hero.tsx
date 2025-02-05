@@ -7,8 +7,10 @@ const Hero = ({ title, subtitle }) => {
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
       <Pressable style={styles.buttonContainer}>
-        <Text style={styles.buttonText} onPress={()=>{}}>Explore</Text>
-        </Pressable>
+        <Text style={styles.buttonText} onPress={() => {}}>
+          Explore
+        </Text>
+      </Pressable>
     </View>
   );
 };
@@ -31,12 +33,12 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
     paddingHorizontal: 24,
     paddingVertical: 8,
-    borderRadius:5,
+    borderRadius: 5,
     marginTop: 16,
   },
   buttonText: {
-    color: "white"
-  }
+    color: "white",
+  },
 });
 
 export default Hero;

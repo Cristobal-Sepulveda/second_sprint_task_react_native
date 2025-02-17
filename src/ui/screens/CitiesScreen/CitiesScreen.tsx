@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import axios from "axios";
 import CityCard from "./components/CityCard";
-import City from "../../../utils/types"; // City type: { name: string; image: string; }
+import City from "../../../utils/types";
 
 interface ApiResponse {
   data: City[];

@@ -3,7 +3,16 @@ import Carousel from "react-native-reanimated-carousel";
 
 const { width } = Dimensions.get("window");
 
-const CustomCarousel = ({ cities }) => {
+interface City {
+  name: string;
+  image: string;
+}
+
+interface CarouselProps {
+  cities: City[];
+}
+
+const CustomCarousel = (cities: CarouselProps) => {
   return (
     <View style={styles.container}>
       <Carousel
@@ -11,7 +20,7 @@ const CustomCarousel = ({ cities }) => {
         autoPlay={true}
         width={width}
         height={250}
-        data={cities}
+        data={cities.cities}
         scrollAnimationDuration={2000}
         renderItem={({ item }) => (
           <View style={styles.carouselItem}>

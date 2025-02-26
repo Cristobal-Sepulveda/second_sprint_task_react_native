@@ -3,8 +3,8 @@ import { View, Text, TextInput, Button } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../../core/redux/authSlice";
-import { loginSchema } from "../../../utils/LoginSchema";
+import { loginUser } from "../../../store/authSlice";
+import { loginSchema } from "../../../utils/loginSchema";
 
 function LoginScreen() {
   const dispatch = useDispatch();

@@ -7,6 +7,7 @@ function HomeScreen() {
   return (
     <>
       <Hero title="MyTinerary" subtitle="Find your perfect travel itinerary" />
+      <CustomCarousel cities={citiesData} />
     </>
   );
 }

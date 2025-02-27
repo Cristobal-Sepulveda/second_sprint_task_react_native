@@ -14,7 +14,7 @@ export default function HomeScreen() {
       <Hero title="MyTinerary" subtitle="Find your perfect travel itinerary" />
       <CustomCarousel cities={citiesData} />
       <Button
-        title="Cerrar"
+        title="Cerrar Sesión"
         onPress={() => {
           removeUser();
           logout();

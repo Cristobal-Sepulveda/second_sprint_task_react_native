@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
-import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../../../utils/loginSchema";
 import useUserActions from "../../../store/hooks/useUserActions";
 import { router } from "expo-router";
 import { setUser } from "../../../utils/storage";
+import { TextInput, Pressable } from "react-native";
+import React from "react";
 
-export default function LoginScreen() {
-  const { user, login } = useUserActions();
+export default function RegisterScreen() {
+  const { login } = useUserActions();
+
   const {
     control,
     handleSubmit,
@@ -17,24 +19,16 @@ export default function LoginScreen() {
     resolver: zodResolver(loginSchema),
   });
 
-  useEffect(() => {
-    handleUserUpdate(user);
-  }, [user]);
-
-  const handleUserUpdate = (data) => {
-    if (data !== null) {
-      setUser(data);
+  const initCreateAccountRequest = (data) => {
+    setUser(data).then(() => {
+      login(data);
       router.replace("(tabs)");
-    }
-  };
-
-  const initLoginRequest = (data) => {
-    login(data);
+    });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.loginTitle}>Welcome</Text>
+      <Text>Crear cuenta</Text>
 
       <Controller
         control={control}
@@ -69,16 +63,12 @@ export default function LoginScreen() {
       />
       {errors.password && <Text>{errors.password.message}</Text>}
 
-      <Pressable style={styles.button} onPress={handleSubmit(initLoginRequest)}>
-        <Text style={{ color: "white" }}>Iniciar sesión</Text>
-      </Pressable>
-
-      <Text
-        style={{ color: "blue", marginTop: 8 }}
-        onPress={() => router.push("/register")}
+      <Pressable
+        style={styles.button}
+        onPress={handleSubmit(initCreateAccountRequest)}
       >
-        ¿No tienes cuenta? Crear cuenta.
-      </Text>
+        <Text style={{ color: "white" }}>Crear cuenta</Text>
+      </Pressable>
     </View>
   );
 }

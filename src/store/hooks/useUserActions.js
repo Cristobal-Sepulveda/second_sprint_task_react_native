@@ -4,12 +4,12 @@ import { loginAction, logoutAction } from "../reducers/userSlice";
 const useUserActions = () => {
   const dispatch = useDispatch();
 
-  const userReducer = useSelector((state) => state.userReducer.user);
+  const user = useSelector((state) => state.userReducer.user);
 
   const login = (data) => dispatch(loginAction(data));
   const logout = () => dispatch(logoutAction());
 
-  return { userReducer, login, logout };
+  return { user, login, logout };
 };
 
 export default useUserActions;

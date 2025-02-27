@@ -5,17 +5,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../../../utils/loginSchema";
 import useUserActions from "../../../store/hooks/useUserActions";
 import { router } from "expo-router";
+import { setUser } from "../../../utils/storage";
 
 export default function LoginScreen() {
-  const { userReducer, login } = useUserActions();
-
-  useEffect(() => {
-    console.log("LoginScreen user:", userReducer);
-    if (userReducer !== null) {
-      router.replace("(tabs)");
-    }
-  }, [userReducer]);
-
+  const { user, login } = useUserActions();
   const {
     control,
     handleSubmit,
@@ -23,6 +16,17 @@ export default function LoginScreen() {
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
+
+  useEffect(() => {
+    handleUserUpdate(user);
+  }, [user]);
+
+  const handleUserUpdate = (data) => {
+    if (data !== null) {
+      setUser(data);
+      router.replace("(tabs)");
+    }
+  };
 
   const initLoginRequest = (data) => {
     login(data);

@@ -15,7 +15,6 @@ const userSlice = createSlice({
     logoutAction: (state) => {
       state.user = null;
       state.token = null;
-      console.log("userReducer", state);
     },
   },
 });

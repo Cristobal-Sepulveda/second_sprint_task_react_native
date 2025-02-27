@@ -9,7 +9,7 @@ export default function WithUser({ children }) {
     console.log("WithUser userReducer:", userReducer);
   }, [userReducer]);
 
-  if (userReducer.user === null) return <Redirect href={"/login"} />;
+  if (userReducer === null) return <Redirect href={"/login"} />;
 
   return <>{children}</>;
 }

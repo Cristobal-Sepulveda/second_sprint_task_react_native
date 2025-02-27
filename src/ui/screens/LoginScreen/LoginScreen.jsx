@@ -4,12 +4,16 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../../../utils/loginSchema";
 import useUserActions from "../../../store/hooks/useUserActions";
+import { router } from "expo-router";
 
 export default function LoginScreen() {
   const { userReducer, login } = useUserActions();
 
   useEffect(() => {
     console.log("LoginScreen user:", userReducer);
+    if (userReducer !== null) {
+      router.replace("(tabs)");
+    }
   }, [userReducer]);
 
   const {

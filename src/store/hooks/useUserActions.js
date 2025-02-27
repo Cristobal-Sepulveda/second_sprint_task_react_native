@@ -3,7 +3,9 @@ import { loginAction, logoutAction } from "../reducers/userSlice";
 
 const useUserActions = () => {
   const dispatch = useDispatch();
-  const userReducer = useSelector((state) => state.userReducer);
+
+  const userReducer = useSelector((state) => state.userReducer.user);
+
   const login = (data) => dispatch(loginAction(data));
   const logout = () => dispatch(logoutAction());
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "../../components/Hero/Hero";
 import CustomCarousel from "../../components/Carousel/CustomCarousel";
 import { citiesData } from "../../../utils/citiesData";
@@ -7,7 +7,7 @@ import useUserActions from "../../../store/hooks/useUserActions";
 import { removeUser } from "../../../utils/storage";
 
 export default function HomeScreen() {
-  const { user, logout } = useUserActions();
+  const { logout } = useUserActions();
 
   return (
     <View>

@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
-import CustomCarousel from "../../components/Carousel/CustomCarousel";
+import HomeScreenHeader from "./components/HomeScreenHeader";
+import CustomCarousel from "./components/CustomCarousel";
 import { citiesData } from "../../../utils/citiesData";
 import { View, Button } from "react-native";
 import useUserActions from "../../../store/hooks/useUserActions";
@@ -11,7 +11,10 @@ export default function HomeScreen() {
 
   return (
     <View>
-      <Hero title="MyTinerary" subtitle="Find your perfect travel itinerary" />
+      <HomeScreenHeader
+        title="MyTinerary"
+        subtitle="Find your perfect travel itinerary"
+      />
       <CustomCarousel cities={citiesData} />
       <Button
         title="Cerrar Sesión"

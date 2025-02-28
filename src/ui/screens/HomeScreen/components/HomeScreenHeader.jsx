@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 
-const Hero = ({ title, subtitle }) => {
+export default function HomeScreenHeader({ title, subtitle }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -13,7 +13,7 @@ const Hero = ({ title, subtitle }) => {
       </Pressable>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -40,5 +40,3 @@ const styles = StyleSheet.create({
     color: "white",
   },
 });
-
-export default Hero;

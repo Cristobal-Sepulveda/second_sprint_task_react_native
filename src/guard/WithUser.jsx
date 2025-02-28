@@ -14,7 +14,7 @@ export default function WithUser({ children }) {
       .then((data) => {
         setUserInStorage(data);
       })
-      .catch((e) => console.log(e))
+      .catch((e) => {})
       .finally(() => setLoading(false));
   }, []);
 
